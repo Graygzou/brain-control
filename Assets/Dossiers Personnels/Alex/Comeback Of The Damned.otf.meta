@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8e24ebb6d61a10540ab73709b6520f9d
+timeCreated: 1520162448
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Comeback Of The Damned
+  fontNames:
+  - Comeback Of The Damned
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

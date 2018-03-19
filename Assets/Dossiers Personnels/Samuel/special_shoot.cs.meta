@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 90f23de39aa42a2419d2d95a9e2aef60
+timeCreated: 1520051169
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefab: {instanceID: 0}
+  - prefab1: {instanceID: 0}
+  - prefab2: {instanceID: 0}
+  - prefab3: {instanceID: 0}
+  - muzzle: {instanceID: 0}
+  - bruitage: {instanceID: 0}
+  - shotgun: {fileID: 8300000, guid: 35f6340a7b8e45d419019ae1ab2ddf18, type: 3}
+  - rifle: {fileID: 8300000, guid: c202a9c7567bf734eb4c9cb7e936d060, type: 3}
+  - lmg: {fileID: 8300000, guid: 984a4bf4b20a9164d8bafd810aad7e2f, type: 3}
+  - railgun: {instanceID: 0}
+  - rpg: {instanceID: 0}
+  - bouncer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

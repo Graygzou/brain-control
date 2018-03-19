@@ -1,0 +1,14 @@
+Dragon (100x100)
+-Idle
+-walk
+-attack
+
+knight (150x150)
+-idle
+-walk
+-attack
+
+princess (100x100)
+-idle
+
+All sprite lists are pre-sliced.

@@ -1,0 +1,666 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 8
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 11
+  m_GIWorkflowMode: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_TemporalCoherenceThreshold: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 1
+  m_LightmapEditorSettings:
+    serializedVersion: 9
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 1
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &958910900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 958910902}
+  - component: {fileID: 958910901}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &958910901
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 958910900}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &958910902
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 958910900}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1737850494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1737850498}
+  - component: {fileID: 1737850497}
+  - component: {fileID: 1737850496}
+  - component: {fileID: 1737850495}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1737850495
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737850494}
+  m_Enabled: 1
+--- !u!124 &1737850496
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737850494}
+  m_Enabled: 1
+--- !u!20 &1737850497
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737850494}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1737850498
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737850494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2115377743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2115377745}
+  - component: {fileID: 2115377744}
+  m_Layer: 0
+  m_Name: __tiled2unity_importer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2115377744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115377743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d7f8492faefe4ca919913c737a425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tiled2UnityXmlPath: Assets/Tiled2Unity/Imported/map_final..tiled2unity.xml
+  ExporterTiled2UnityVersion: 1.0.13.2
+  ImportWait_Textures:
+  - ground.png
+  - gun_big_tripple_brown_destroyed.png
+  - dirt_001.png
+  - dirt_002.png
+  - road_5.png
+  - road_4.png
+  - bunkers_big.png
+  - buildings.png
+  - crates_2.png
+  - bunker_round_1x2_top_destroyed.png
+  - road_corner_2.png
+  - bunker_1x2_top_destroyed.png
+  - bunkers_2x1.png
+  - bunkers_1x1.png
+  - road_corner_3.png
+  - road_corner_1.png
+  - house_2b.png
+  - ruin_2.png
+  - house_1b_destroyed.png
+  - house_1c_destroyed.png
+  - house_1_destroyed.png
+  - barrels_2.png
+  - bunkers_big_top.png
+  - tree_01.png
+  - crates_4.png
+  - tree_21.png
+  - crates_3.png
+  - tree_53.png
+  - tree_46.png
+  - tree_19.png
+  - tree_52.png
+  - bush_big.png
+  - tree_38.png
+  - colider.png
+  - col_gauche2.png
+  - col_bas.png
+  - colliderv2.png
+  - col_haut.png
+  - col_droit2.png
+  - col_droit.png
+  ImportWait_Materials:
+  - ground.mat
+  - gun_big_tripple_brown_destroyed.mat
+  - dirt_001.mat
+  - dirt_002.mat
+  - road_5.mat
+  - road_4.mat
+  - bunkers_big.mat
+  - buildings.mat
+  - crates_2.mat
+  - bunker_round_1x2_top_destroyed.mat
+  - road_corner_2.mat
+  - bunker_1x2_top_destroyed.mat
+  - bunkers_2x1.mat
+  - bunkers_1x1.mat
+  - road_corner_3.mat
+  - road_corner_1.mat
+  - house_2b.mat
+  - ruin_2.mat
+  - house_1b_destroyed.mat
+  - house_1c_destroyed.mat
+  - house_1_destroyed.mat
+  - barrels_2.mat
+  - bunkers_big_top.mat
+  - tree_01.mat
+  - crates_4.mat
+  - tree_21.mat
+  - crates_3.mat
+  - tree_53.mat
+  - tree_46.mat
+  - tree_19.mat
+  - tree_52.mat
+  - bush_big.mat
+  - tree_38.mat
+  - colider.mat
+  - col_gauche2.mat
+  - col_bas.mat
+  - colliderv2.mat
+  - col_haut.mat
+  - col_droit2.mat
+  - col_droit.mat
+  ImportWait_Meshes:
+  - map_final._mesh_0001.obj
+  - map_final._mesh_0002.obj
+  - map_final._mesh_0003.obj
+  - map_final._mesh_0004.obj
+  - map_final._mesh_0005.obj
+  - map_final._mesh_0006.obj
+  - map_final._mesh_0007.obj
+  - map_final._mesh_0008.obj
+  - map_final._mesh_0009.obj
+  - map_final._mesh_0010.obj
+  - map_final._mesh_0011.obj
+  - map_final._mesh_0012.obj
+  - map_final._mesh_0013.obj
+  - map_final._mesh_0014.obj
+  - map_final._mesh_0015.obj
+  - map_final._mesh_0016.obj
+  - map_final._mesh_0017.obj
+  - map_final._mesh_0018.obj
+  - map_final._mesh_0019.obj
+  - map_final._mesh_0020.obj
+  - map_final._mesh_0021.obj
+  - map_final._mesh_0022.obj
+  - map_final._mesh_0023.obj
+  - map_final._mesh_0024.obj
+  - map_final._mesh_0025.obj
+  - map_final._mesh_0026.obj
+  - map_final._mesh_0027.obj
+  - map_final._mesh_0028.obj
+  - map_final._mesh_0029.obj
+  - map_final._mesh_0030.obj
+  - map_final._mesh_0031.obj
+  - map_final._mesh_0032.obj
+  - map_final._mesh_0033.obj
+  - map_final._mesh_0034.obj
+  - map_final._mesh_0035.obj
+  - map_final._mesh_0036.obj
+  - map_final._mesh_0037.obj
+  - map_final._mesh_0038.obj
+  - map_final._mesh_0039.obj
+  - map_final._mesh_0040.obj
+  - map_final._mesh_0041.obj
+  - map_final._mesh_0042.obj
+  - map_final._mesh_0043.obj
+  - map_final._mesh_0044.obj
+  - map_final._mesh_0045.obj
+  - map_final._mesh_0046.obj
+  - map_final._mesh_0047.obj
+  - map_final._mesh_0048.obj
+  - map_final._mesh_0049.obj
+  - map_final._mesh_0050.obj
+  - map_final._mesh_0051.obj
+  - map_final._mesh_0052.obj
+  - map_final._mesh_0053.obj
+  - map_final._mesh_0054.obj
+  - map_final._mesh_0055.obj
+  - map_final._mesh_0056.obj
+  - map_final._mesh_0057.obj
+  ImportWait_Prefabs: []
+  ImportComplete_Textures:
+  - colider.png
+  - bush_big.png
+  - crates_2.png
+  - road_corner_1.png
+  - house_1_destroyed.png
+  - tree_01.png
+  - house_1c_destroyed.png
+  - bunkers_2x1.png
+  - col_bas.png
+  - crates_4.png
+  - buildings.png
+  - tree_21.png
+  - colliderv2.png
+  - road_4.png
+  - dirt_002.png
+  - house_2b.png
+  - gun_big_tripple_brown_destroyed.png
+  - col_droit.png
+  - dirt_001.png
+  - bunkers_1x1.png
+  - tree_46.png
+  - ruin_2.png
+  - bunkers_big_top.png
+  - road_5.png
+  - ground.png
+  - bunkers_big.png
+  - col_gauche2.png
+  - crates_3.png
+  - tree_52.png
+  - tree_19.png
+  - col_haut.png
+  - bunker_round_1x2_top_destroyed.png
+  - road_corner_3.png
+  - tree_53.png
+  - road_corner_2.png
+  - barrels_2.png
+  - house_1b_destroyed.png
+  - tree_38.png
+  - bunker_1x2_top_destroyed.png
+  - col_droit2.png
+  ImportComplete_Materials:
+  - barrels_2.mat
+  - road_corner_2.mat
+  - road_5.mat
+  - bunkers_1x1.mat
+  - crates_2.mat
+  - road_corner_3.mat
+  - crates_4.mat
+  - road_corner_1.mat
+  - bunkers_big_top.mat
+  - col_haut.mat
+  - crates_3.mat
+  - house_1_destroyed.mat
+  - bunker_round_1x2_top_destroyed.mat
+  - tree_53.mat
+  - dirt_001.mat
+  - house_1b_destroyed.mat
+  - tree_46.mat
+  - bunkers_2x1.mat
+  - colider.mat
+  - col_droit.mat
+  - tree_01.mat
+  - bush_big.mat
+  - gun_big_tripple_brown_destroyed.mat
+  - dirt_002.mat
+  - bunkers_big.mat
+  - house_2b.mat
+  - tree_19.mat
+  - tree_38.mat
+  - col_gauche2.mat
+  - tree_21.mat
+  - colliderv2.mat
+  - ground.mat
+  - road_4.mat
+  - bunker_1x2_top_destroyed.mat
+  - col_bas.mat
+  - tree_52.mat
+  - buildings.mat
+  - col_droit2.mat
+  - house_1c_destroyed.mat
+  - ruin_2.mat
+  ImportComplete_Meshes: []
+  ImportComplete_Prefabs: []
+  ImportingAssets:
+  - Assets/Tiled2Unity/Textures/ground.png
+  - Assets/Tiled2Unity/Textures/gun_big_tripple_brown_destroyed.png
+  - Assets/Tiled2Unity/Textures/dirt_001.png
+  - Assets/Tiled2Unity/Textures/dirt_002.png
+  - Assets/Tiled2Unity/Textures/road_5.png
+  - Assets/Tiled2Unity/Textures/road_4.png
+  - Assets/Tiled2Unity/Textures/bunkers_big.png
+  - Assets/Tiled2Unity/Textures/buildings.png
+  - Assets/Tiled2Unity/Textures/crates_2.png
+  - Assets/Tiled2Unity/Textures/bunker_round_1x2_top_destroyed.png
+  - Assets/Tiled2Unity/Textures/road_corner_2.png
+  - Assets/Tiled2Unity/Textures/bunker_1x2_top_destroyed.png
+  - Assets/Tiled2Unity/Textures/bunkers_2x1.png
+  - Assets/Tiled2Unity/Textures/bunkers_1x1.png
+  - Assets/Tiled2Unity/Textures/road_corner_3.png
+  - Assets/Tiled2Unity/Textures/road_corner_1.png
+  - Assets/Tiled2Unity/Textures/house_2b.png
+  - Assets/Tiled2Unity/Textures/ruin_2.png
+  - Assets/Tiled2Unity/Textures/house_1b_destroyed.png
+  - Assets/Tiled2Unity/Textures/house_1c_destroyed.png
+  - Assets/Tiled2Unity/Textures/house_1_destroyed.png
+  - Assets/Tiled2Unity/Textures/barrels_2.png
+  - Assets/Tiled2Unity/Textures/bunkers_big_top.png
+  - Assets/Tiled2Unity/Textures/tree_01.png
+  - Assets/Tiled2Unity/Textures/crates_4.png
+  - Assets/Tiled2Unity/Textures/tree_21.png
+  - Assets/Tiled2Unity/Textures/crates_3.png
+  - Assets/Tiled2Unity/Textures/tree_53.png
+  - Assets/Tiled2Unity/Textures/tree_46.png
+  - Assets/Tiled2Unity/Textures/tree_19.png
+  - Assets/Tiled2Unity/Textures/tree_52.png
+  - Assets/Tiled2Unity/Textures/bush_big.png
+  - Assets/Tiled2Unity/Textures/tree_38.png
+  - Assets/Tiled2Unity/Textures/colider.png
+  - Assets/Tiled2Unity/Textures/col_gauche2.png
+  - Assets/Tiled2Unity/Textures/col_bas.png
+  - Assets/Tiled2Unity/Textures/colliderv2.png
+  - Assets/Tiled2Unity/Textures/col_haut.png
+  - Assets/Tiled2Unity/Textures/col_droit2.png
+  - Assets/Tiled2Unity/Textures/col_droit.png
+  - Assets/Tiled2Unity/Materials/ground.mat
+  - Assets/Tiled2Unity/Materials/gun_big_tripple_brown_destroyed.mat
+  - Assets/Tiled2Unity/Materials/dirt_001.mat
+  - Assets/Tiled2Unity/Materials/dirt_002.mat
+  - Assets/Tiled2Unity/Materials/road_5.mat
+  - Assets/Tiled2Unity/Materials/road_4.mat
+  - Assets/Tiled2Unity/Materials/bunkers_big.mat
+  - Assets/Tiled2Unity/Materials/buildings.mat
+  - Assets/Tiled2Unity/Materials/crates_2.mat
+  - Assets/Tiled2Unity/Materials/bunker_round_1x2_top_destroyed.mat
+  - Assets/Tiled2Unity/Materials/road_corner_2.mat
+  - Assets/Tiled2Unity/Materials/bunker_1x2_top_destroyed.mat
+  - Assets/Tiled2Unity/Materials/bunkers_2x1.mat
+  - Assets/Tiled2Unity/Materials/bunkers_1x1.mat
+  - Assets/Tiled2Unity/Materials/road_corner_3.mat
+  - Assets/Tiled2Unity/Materials/road_corner_1.mat
+  - Assets/Tiled2Unity/Materials/house_2b.mat
+  - Assets/Tiled2Unity/Materials/ruin_2.mat
+  - Assets/Tiled2Unity/Materials/house_1b_destroyed.mat
+  - Assets/Tiled2Unity/Materials/house_1c_destroyed.mat
+  - Assets/Tiled2Unity/Materials/house_1_destroyed.mat
+  - Assets/Tiled2Unity/Materials/barrels_2.mat
+  - Assets/Tiled2Unity/Materials/bunkers_big_top.mat
+  - Assets/Tiled2Unity/Materials/tree_01.mat
+  - Assets/Tiled2Unity/Materials/crates_4.mat
+  - Assets/Tiled2Unity/Materials/tree_21.mat
+  - Assets/Tiled2Unity/Materials/crates_3.mat
+  - Assets/Tiled2Unity/Materials/tree_53.mat
+  - Assets/Tiled2Unity/Materials/tree_46.mat
+  - Assets/Tiled2Unity/Materials/tree_19.mat
+  - Assets/Tiled2Unity/Materials/tree_52.mat
+  - Assets/Tiled2Unity/Materials/bush_big.mat
+  - Assets/Tiled2Unity/Materials/tree_38.mat
+  - Assets/Tiled2Unity/Materials/colider.mat
+  - Assets/Tiled2Unity/Materials/col_gauche2.mat
+  - Assets/Tiled2Unity/Materials/col_bas.mat
+  - Assets/Tiled2Unity/Materials/colliderv2.mat
+  - Assets/Tiled2Unity/Materials/col_haut.mat
+  - Assets/Tiled2Unity/Materials/col_droit2.mat
+  - Assets/Tiled2Unity/Materials/col_droit.mat
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0001.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0002.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0003.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0004.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0005.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0006.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0007.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0008.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0009.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0010.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0011.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0012.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0013.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0014.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0015.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0016.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0017.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0018.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0019.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0020.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0021.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0022.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0023.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0024.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0025.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0026.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0027.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0028.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0029.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0030.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0031.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0032.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0033.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0034.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0035.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0036.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0037.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0038.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0039.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0040.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0041.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0042.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0043.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0044.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0045.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0046.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0047.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0048.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0049.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0050.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0051.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0052.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0053.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0054.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0055.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0056.obj
+  - Assets/Tiled2Unity/Meshes/map_final./map_final._mesh_0057.obj
+--- !u!4 &2115377745
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115377743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
