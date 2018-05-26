@@ -1,4 +1,6 @@
-# Brain-Control
+# Brain-Control 
+[![Build Status](https://travis-ci.com/Graygzou/Brain-Control.svg?branch=master)](https://travis-ci.com/Graygzou/Brain-Control)
+
 Top down 2D game, made with Unity engine for the [WonderJam 2018](http://jam.aemi.ca/). This game is only available with a 2 players mode.
 This jam take place in Winter and is organized by the University of Quebec in Chitoutimi ([UQAC](http://www.uqac.ca/))
 
