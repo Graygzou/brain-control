@@ -23,17 +23,18 @@ install:
   - ./Scripts/install.sh
 
 script:
+  - ./Scripts/run-tests.sh
   - ./Scripts/build.sh
 
 after_success:
   - sonar-scanner
   # Not working right now. Need to add something that feed him with reports.
   # Unity Test Runner ? OpenCover ? ...
-  #- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
-#cache:
-#  directories:
-#    - '$HOME/.sonar/cache'
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 
 notifications:
   email:
