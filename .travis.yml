@@ -3,10 +3,18 @@
 language: objective-c
 osx_image: xcode61
 rvm:
-- 2.1.2
+  - 2.1.2
 install:
-- ./Scripts/install.sh
+  - ./Scripts/install.sh
 script:
-- ./Scripts/build.sh
+  - ./Scripts/build.sh
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - ./Scripts/sonarcloud.sh
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - boiron.greg@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
