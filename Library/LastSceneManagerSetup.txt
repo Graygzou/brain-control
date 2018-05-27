@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Dossiers Personnels/Greg/MergecScene Greg.unity
-  isLoaded: 1
-  isActive: 1
