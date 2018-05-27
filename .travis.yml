@@ -2,6 +2,14 @@
 
 language: objective-c
 dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "graygzou-github"
+    token:
+      secure: ${SONAR_TOKEN}
+
 
 osx_image: xcode61
 rvm:
@@ -16,12 +24,10 @@ after_success:
   # Unity Test Runner ? OpenCover ? ...
   - bash <(curl -s https://codecov.io/bash)
 
-addons:
-  sonarcloud:
-    organization: "graygzou-github"
-    token:
-      secure: "aa6Fd6CYcH/xlgLtu2l7lgLEm8+EOFrqawCqqF1nTn8YzOVFFl1NYZYqC1T7igNPXzCucQZ0vnFI8HU5QsZFHUrMnax554pIvJrh8wG60Hwi+6B84oIcBndKqB/TTt0Dp1sC637VVzwhjFRqL8J4LL3ML6P2lhaLPPniyvDERBHi4T+cbiDb15wT34JHJOA6ilVVz7/7SwiMFrbpW2GTDewmcSEnPkK+LYX+JS7HvJPmXa9rWIkPyQH1QfoTmQ1J2Op1l7BeNIEWvPukb3PsGOJlBFuk9jnGq9KB6MM/GLFVmigLEmNIzrox6l+1IiOTkPnEnZgAHlPdSfYDzRRH3TMADP6UIZrSbevcofVeCnKELSvHv9mywla+iN2COselmBse6Fp3WOQqMcDkUQiMLdyGlL3K8TyLFfIRyqRiUWnswyj0l+Moho428Y6c6BGx3mwHA6QTehF4qtQHR2L44zmtSm+wDB2zCazW5sM2S6dl/G2ji48U1SheWVuu09EkT/OxUz98fYSiQ2ok/rUzYedBcUrDHyRYLNXytKuxgje3QlaUgvVpCvOh4c2UGKanv8seoWmHnHnpY74Jn5y36ClFHJ44E6slvi0DuQRIM0UQRd5y/sgnbdvZMVfEaVp9hvggYqwOcZuDQWNOJel7jkFysDHPmTJy6Q1fIuuC484="
-      
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+
 notifications:
   email:
     recipients:
