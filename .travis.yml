@@ -9,12 +9,20 @@ install:
 script:
   - ./Scripts/build.sh
 after_success:
-  - ./Scripts/sonarcloud.sh
+  - sonar-scanner
+  # Not working right now. Need to add something that feed him with reports.
+  # Unity Test Runner ? OpenCover ? ...
   - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email:
     recipients:
       - boiron.greg@gmail.com
-    on_success: never # default: change
-    on_failure: always # default: always
+    on_success: never # Default: change
+    on_failure: always # Default: always
+
+addons:
+  sonarcloud:
+    organization: "graygzou-github"
+    token:
+      secure: jU7fdEDb3unDZgew9HjH3unVAuspm7m0zbfdOq8m4nfMXstKoqiazw9qZoeC3sdKnKZb4dtUu51jmiJbF1MhVUYB1XRkW86Jmq40A6weM7h7QwThW5mCxTRMJoE3xTcy+BiGrVrOPOXxTGf7g5f5riS3Ctuuj4ALcduqUYiCyyVC48Ti0jXkpc7iW51kW1gZvqlMRir+EFaaO82pFiZjQAaME5rq8F923Y/0uAt9HX6PlNvK3eLo3xHyf9rClBd3x4aJ7YNi6DWO4NbNvefC2mscbmR0tz8Mspvx/Y8FI/9sdc7MCyAW8Oimn2JCZs7oW6h8ThImP1wkOt/t5HgMa4Q1Y61a6hShZu2bUDbSDXX8jZwApudwEOywNAj8GUpgAPtrEr/MIIusRLUrj0Yh6khDRDyXZq4AaBpv137fHx/6UqQKe3qzkcWF85cLo95IuVL3n6FX76UYIJAAGx5rNNt8dB8uyVypdmgyQjld4E4Eyyftp4wSjoSZTSZOXcMPM4Pa2X54J2DG22SAej5aqodLYAqStkcohYpNe8tr5nNNmcZ6untpEyxj9/g56QlVycJ7gdwGEWGXA5IWuturWWvjzh6OrfMSstHfPrHQ6xCDNQz+BNZJ8AV0URzLtkMT1f0sXipHuiRtDq2QFad7CLozQkXkUCLVlq39nvdCYq8=
