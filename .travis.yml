@@ -1,6 +1,8 @@
 # Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
 
 language: objective-c
+dist: trusty
+
 osx_image: xcode61
 rvm:
   - 2.1.2
