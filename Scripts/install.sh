@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# This file is based on an example by JonathanPorta. See the original example here: 
+# This file is based on an example by JonathanPorta. See the original example here:
 #	https://github.com/JonathanPorta/ci-build
 
 # Unity used this website to host Unity archive
@@ -36,3 +36,5 @@ install "MacEditorInstaller/Unity-$VERSION.pkg"
 install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
 install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg"
 install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
+
+set +e
