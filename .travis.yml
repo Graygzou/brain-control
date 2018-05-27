@@ -7,8 +7,8 @@ dist: trusty
 sudo: required
 
 # Already by default.
-mono:
-  -latest
+#mono:
+#  -latest
 
 addons:
   sonarcloud:
