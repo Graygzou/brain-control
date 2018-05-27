@@ -40,3 +40,5 @@ echo "Linux return code: $?"
 
 echo 'Logs from build'
 cat $(pwd)/unity.log
+
+set +e
