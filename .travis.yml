@@ -11,22 +11,22 @@ addons:
       secure: ${SONAR_TOKEN}
 
 
-osx_image: xcode61
+osx_image: xcode9.3
 rvm:
-  - 2.1.2
+  - 2.2
 install:
   - ./Scripts/install.sh
 script:
   - ./Scripts/build.sh
-  - sonar-scanner -X
+  - sonar-scanner
 after_success:
   # Not working right now. Need to add something that feed him with reports.
   # Unity Test Runner ? OpenCover ? ...
   - bash <(curl -s https://codecov.io/bash)
 
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
+#cache:
+#  directories:
+#    - '$HOME/.sonar/cache'
 
 notifications:
   email:
