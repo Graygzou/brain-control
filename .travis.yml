@@ -1,15 +1,23 @@
 # Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
 
-language: objective-c
+language: csharp
+solution: "Brain-Control.sln"
 osx_image: xcode7.3
 dist: trusty
 sudo: required
+
+# Already by default.
+mono:
+  -latest
 
 addons:
   sonarcloud:
     organization: "graygzou-github"
     token:
       secure: ${SONAR_TOKEN}
+
+before_install:
+  - chmod a+x ./Scripts/*.sh
 
 install:
   - ./Scripts/install.sh
@@ -31,5 +39,5 @@ notifications:
   email:
     recipients:
       - boiron.greg@gmail.com
-    on_success: never # Default: change
+    on_success: change # Default: change. Can be replace by never.
     on_failure: always # Default: always
