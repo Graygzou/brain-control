@@ -1,6 +1,7 @@
 # Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
 
 language: objective-c
+osx_image: xcode7.3
 dist: trusty
 sudo: required
 
@@ -10,14 +11,12 @@ addons:
     token:
       secure: ${SONAR_TOKEN}
 
-
-osx_image: xcode9.3
-rvm:
-  - 2.2
 install:
   - ./Scripts/install.sh
+
 script:
   - ./Scripts/build.sh
+
 after_success:
   - sonar-scanner
   # Not working right now. Need to add something that feed him with reports.

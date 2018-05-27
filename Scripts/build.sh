@@ -14,6 +14,7 @@ echo "Attempting to build $project for Windows"
   -projectPath $(pwd) \
   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
   -quit
+echo "Windows return code: $?"
 
 echo "Attempting to build $project for OS X"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
@@ -24,6 +25,7 @@ echo "Attempting to build $project for OS X"
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
   -quit
+echo "OS X return code: $?"
 
 echo "Attempting to build $project for Linux"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
@@ -34,6 +36,7 @@ echo "Attempting to build $project for Linux"
   -projectPath $(pwd) \
   -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
   -quit
+echo "Linux return code: $?"
 
 echo 'Logs from build'
 cat $(pwd)/unity.log
