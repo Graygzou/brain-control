@@ -3,7 +3,7 @@
 # This file is based on an example by SebastianJay. See the original example here:
 #	https://github.com/SebastianJay/unity-ci-test/
 
-project = $(pwd)/Assets/$1
+project="Brain-Control"
 
 ## Run the editor unit tests
 echo "Running editor unit tests for $project"
@@ -11,9 +11,9 @@ echo "Running editor unit tests for $project"
 	-batchmode \
 	-nographics \
 	-silent-crashes \
-	-logFile $(pwd)/unity.log \
-	-projectPath "$project" \
-  -editorTestsResultFile $(pwd)/test-results.xml \
+	-logFile $(pwd)/Tests/unity.log \
+	-projectPath $(pwd) \
+  -editorTestsResultFile "$(pwd)/Tests/$project-test-results.xml" \
 	-runEditorTests \
 	-quit
 
