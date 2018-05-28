@@ -44,6 +44,7 @@ before_script:
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
+  - ./Scripts/convert.sh
 
   # NUnit tests
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll
