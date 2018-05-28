@@ -29,7 +29,7 @@ after_success:
   - sonar-scanner
   # Not working right now. Need to add something that feed him with reports.
   # Unity Test Runner ? OpenCover ? ...
-  - bash <(curl -s https://codecov.io/bash)
+  #- bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:

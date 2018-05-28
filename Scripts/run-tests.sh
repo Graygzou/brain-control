@@ -14,8 +14,7 @@ echo "Running editor unit tests for $project"
 	-projectPath $(pwd) \
 	-runEditorTests \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
-	#-editorTestsFilter YOUR_NAMESPACE \
-	-logFile $(pwd)/log-unit-test.txt
+	-logFile $(pwd)/log-unit-test.txt \
 	-runEditorTests \
 	-quit
 
