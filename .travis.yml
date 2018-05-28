@@ -1,9 +1,7 @@
 # Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
 
-language: objective-c
-osx_image: xcode7.3
-dist: trusty
-sudo: required
+language: csharp
+solution: ./Brain-Control.sln
 
 # Already by default.
 #mono:
@@ -20,8 +18,15 @@ before_install:
 
 install:
   - ./Scripts/install.sh
+  # NUnit test
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 script:
+  # NUnit tests
+  - xbuild /p:Configuration=Release Brain-Control.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Brain-Control.Tests/bin/Release/Brain-Control.Tests.dll
+
+  # Run customs tests.
   - ./Scripts/run-tests.sh
   - ./Scripts/build.sh
 
