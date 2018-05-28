@@ -47,7 +47,7 @@ script:
   - ./Scripts/convert.sh
 
   # NUnit tests
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll --result:nunit2
 
   # Test for codecov
   - curl -s https://codecov.io/bash > codecov
