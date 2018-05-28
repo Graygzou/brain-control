@@ -21,8 +21,6 @@ echo "Running editor unit tests for $project"
 
 results=$?
 
-ls -R
-
 echo "Unit test logs"
 cat $(pwd)/log-unit-test.txt
 cat $(pwd)/unit-test-results.xml
@@ -38,6 +36,6 @@ fi
 # Test for codecov
 curl -s https://codecov.io/bash > codecov
 chmod +x codecov
-./codecov -f "$(pwd)/Tests/$project-test-results.xml" -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
+./codecov -f $(pwd)/unit-test-results.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
 set +e
