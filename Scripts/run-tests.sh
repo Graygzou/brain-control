@@ -19,7 +19,7 @@ echo "Running editor unit tests for $project"
 
 results=$?
 
-echo ls -r
+echo ls -R
 
 echo "Unit test logs"
 cat "$(pwd)/Tests/$project-test-results.xml"
