@@ -26,10 +26,9 @@ script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
   - ./Scripts/build.sh
-  - bash <(ls -R)
 
   # NUnit tests
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./BrainControl.Tests/bin/Release/BrainControl.Tests.dll
 
 after_success:
   - sonar-scanner
