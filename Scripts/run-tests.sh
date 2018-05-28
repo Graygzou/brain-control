@@ -14,13 +14,11 @@ echo "Running editor unit tests for $project"
 	-projectPath $(pwd) \
 	-runEditorTests \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
-	-logFile $(pwd)/log-unit-test.txt \
 	-quit
 
 results=$?
 
 echo "Unit test logs"
-cat $(pwd)/log-unit-test.txt
 cat $(pwd)/unit-test-results.xml
 
 # Exit if tests failed
