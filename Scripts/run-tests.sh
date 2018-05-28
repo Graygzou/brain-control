@@ -11,9 +11,11 @@ echo "Running editor unit tests for $project"
 	-batchmode \
 	-nographics \
 	-silent-crashes \
-	-logFile $(pwd)/Tests/unity.log \
 	-projectPath $(pwd) \
-  -editorTestsResultFile "$(pwd)/Tests/$project-test-results.xml" \
+	-runEditorTests \
+	-editorTestsResultFile $(pwd)/unit-test-results.xml \
+	#-editorTestsFilter YOUR_NAMESPACE \
+	-logFile $(pwd)/log-unit-test.txt
 	-runEditorTests \
 	-quit
 
@@ -22,7 +24,8 @@ results=$?
 ls -R
 
 echo "Unit test logs"
-cat "$(pwd)/Tests/$project-test-results.xml"
+cat $(pwd)/log-unit-test.txt
+cat $(pwd)/unit-test-results.xml
 
 # Exit if tests failed
 if [ $results -ne 0 ]
