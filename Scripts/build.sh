@@ -10,7 +10,7 @@ echo "Attempting to build $project for Windows"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/unity.log \
+  -logFile $(pwd)/unity-win.log \
   -projectPath $(pwd) \
   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
   -quit
@@ -21,7 +21,7 @@ echo "Attempting to build $project for OS X"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/unity.log \
+  -logFile $(pwd)/unity-osx.log \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
   -quit
@@ -32,13 +32,13 @@ echo "Attempting to build $project for Linux"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/unity.log \
+  -logFile $(pwd)/unity-linux.log \
   -projectPath $(pwd) \
   -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
   -quit
 echo "Linux return code: $?"
 
 echo 'Logs from build'
-cat $(pwd)/unity.log
+cat $(pwd)/unity-osx.log
 
 set +e

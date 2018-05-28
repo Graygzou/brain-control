@@ -46,6 +46,10 @@ script:
   - ./Scripts/run-tests.sh
   - ./Scripts/convert.sh
 
+  # OpenCover -- Not tested
+  #- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
+  #- codecov -f "MyProject_coverage.xml
+
   # NUnit tests
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll --result:nunit2
 
@@ -53,9 +57,6 @@ script:
   - curl -s https://codecov.io/bash > codecov
   - chmod +x codecov
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
-  # Not working right now. Need to add something that feed him with reports.
-  # Unity Test Runner ? OpenCover ? ...
-  #- bash <(curl -s https://codecov.io/bash)
 
 # The deployment portion is used to deploy to specific,
 # supported hosts, like S3, Heroku, or GitHub Releases.
