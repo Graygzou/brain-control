@@ -31,7 +31,7 @@ else
 fi
 
 # Convert the file in the NUnit v2.0
-csc /target:exe /out:convert.exe ./Scripts/convert.cs
+csc /target:exe /out:convert.exe /reference:./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll ./Scripts/convert.cs
 mono convert.exe "unit-test-results.xml"
 
 # Test for codecov
