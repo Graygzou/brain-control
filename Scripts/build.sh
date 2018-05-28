@@ -41,6 +41,4 @@ echo "Linux return code: $?"
 echo 'Logs from build'
 cat $(pwd)/unity.log
 
-ls -R
-
 set +e

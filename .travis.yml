@@ -2,7 +2,14 @@
 
 language: csharp
 solution: ./Brain-Control.sln
+
+osx_image: xcode7.3
 sudo: required
+
+# Specified the branch.
+branches:
+  only:
+    - master
 
 # Already by default.
 #mono:
@@ -14,32 +21,53 @@ addons:
     token:
       secure: ${SONAR_TOKEN}
 
+# Set up prerequisites for installing dependencies that you need for you build.
+# For example:
+#   npm install
+#   bundle install
 before_install:
   - chmod a+x ./Scripts/*.sh
-
-install:
-  - ./Scripts/install.sh
   # NUnit test
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
+# Set up the dependencies of your build.
+install:
+  - ./Scripts/install.sh
+  - ./Scripts/build.sh
+
+# Set up your environment before you run your script.
+# For example:
+#   copy files, start your database, or declare environment variables
+before_script:
+
+# Runs your test script
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
-  - ./Scripts/build.sh
 
   # NUnit tests
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll
 
-after_success:
-  - sonar-scanner
+  # Test for codecov
+  - curl -s https://codecov.io/bash > codecov
+  - chmod +x codecov
+  - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # Not working right now. Need to add something that feed him with reports.
   # Unity Test Runner ? OpenCover ? ...
   #- bash <(curl -s https://codecov.io/bash)
+
+# The deployment portion is used to deploy to specific,
+# supported hosts, like S3, Heroku, or GitHub Releases.
+#after_success:
+
+# Build Matrix
+# Creating a build matrix is a way for us to test a wide variety of environments.
 
 cache:
   directories:
     - '$HOME/.sonar/cache'
 
+# set notification options
 notifications:
   email:
     recipients:
