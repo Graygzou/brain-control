@@ -15,7 +15,6 @@ echo "Running editor unit tests for $project"
 	-runEditorTests \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
 	-logFile $(pwd)/log-unit-test.txt \
-	-runEditorTests \
 	-quit
 
 results=$?
