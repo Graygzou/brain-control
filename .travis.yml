@@ -28,7 +28,7 @@ script:
   - ./Scripts/build.sh
 
   # NUnit tests
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./BrainControl.Tests/bin/Release/BrainControl.Tests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll
 
 after_success:
   - sonar-scanner
