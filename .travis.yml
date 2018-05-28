@@ -2,6 +2,7 @@
 
 language: csharp
 solution: ./Brain-Control.sln
+sudo: required
 
 # Already by default.
 #mono:
@@ -22,13 +23,12 @@ install:
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 script:
-  # NUnit tests
-  - xbuild /p:Configuration=Release Brain-Control.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Brain-Control.Tests/bin/Release/Brain-Control.Tests.dll
-
   # Run customs tests.
   - ./Scripts/run-tests.sh
   - ./Scripts/build.sh
+
+  # NUnit tests
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Brain-Control.Tests/bin/Release/Brain-Control.Tests.dll
 
 after_success:
   - sonar-scanner
