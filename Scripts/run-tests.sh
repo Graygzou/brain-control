@@ -20,7 +20,7 @@ echo "Running editor unit tests for $project"
 results=$?
 
 echo "Unit test logs"
-cat $(pwd)/test-results.xml
+cat "$(pwd)/Tests/$project-test-results.xml"
 
 # Exit if tests failed
 if [ $results -ne 0 ]
@@ -29,5 +29,10 @@ then
 else
   echo "All tests passed. Exited with $results"
 fi
+
+# Test for codecov
+curl -s https://codecov.io/bash > codecov
+chmod +x codecov
+./codecov -f "$(pwd)/Tests/$project-test-results.xml" -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
 set +e
