@@ -13,6 +13,7 @@ echo "Running editor unit tests for $project"
 	-silent-crashes \
 	-projectPath $(pwd) \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
+	-testFilter $(pwd)/Library/ScriptAssemblies/Assembly-CSharp.dll \
 	-runEditorTests
 
 results=$?
