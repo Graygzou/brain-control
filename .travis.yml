@@ -1,10 +1,10 @@
 # Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
 
+os: osx
+osx_image: xcode7.3
+
 language: csharp
 solution: ./Brain-Control.sln
-
-osx_image: xcode7.3
-sudo: required
 
 # Specified the branch.
 branches:
