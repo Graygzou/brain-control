@@ -14,9 +14,10 @@ echo "Running editor unit tests for $project"
 	-projectPath $(pwd) \
 	-runEditorTests \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
-	-quit
 
 results=$?
+
+ls -l
 
 echo "Unit test logs"
 cat $(pwd)/unit-test-results.xml
