@@ -10,7 +10,7 @@ mkdir $coverage
 echo "Calculating coverage with OpenCover"
 $OPENCOVER \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-  -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp.dll" \
+  -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
   -mergeoutput \
   -hideskipped:File \
   -output:$coverage/coverage.xml \
