@@ -15,6 +15,10 @@ branches:
 #mono:
 #  -latest
 
+# Environment variables
+env:
+  - COVERALLS_REPO_TOKEN=kDib1lLCmYcMNbecthFkRvRsnmm4Q6VhC
+
 addons:
   sonarcloud:
     organization: "graygzou-github"
@@ -67,7 +71,6 @@ script:
   # ....New Test....
   # Should produce an XML file (results.xml)
   - ./Scripts/test.sh
-  - mono ./coveralls/coveralls.net.0.7.0/tools/csmacnz.Coveralls.exe --opencover -i coverage/coverage.xml --useRelativePaths
   # Test with NUnit 3
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll --result:nunit2
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
