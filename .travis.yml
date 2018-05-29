@@ -29,7 +29,7 @@ before_install:
   - chmod a+x ./Scripts/*.sh
   # NUnit test
   - nuget install NUnit.Runners -Version 2.6.1 -OutputDirectory packages
-  - nuget install NUnit.Runners -Version 3.8.1 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 
 # Set up the dependencies of your build.
 install:
@@ -57,10 +57,10 @@ script:
   # --- DEBUG ---
   - ./Scripts/debug.sh
   # Test with NUnit 2
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.1/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # Test with NUnit 3
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.1/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
 # The deployment portion is used to deploy to specific,
