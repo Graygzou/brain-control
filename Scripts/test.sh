@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OPENCOVER=$(pwd)/coverage/OpenCover.4.5.519/OpenCover.Console.exe
+OPENCOVER=$(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe
 
 coverage="./coverage"
 rm -rf $coverage

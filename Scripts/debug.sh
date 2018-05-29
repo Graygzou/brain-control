@@ -4,5 +4,9 @@
 ls -l /Library
 
 # 2
-cd testrunner/
+#cd testrunner/
+#ls -l -R
+
+# 3
+cd coverage/
 ls -l -R
