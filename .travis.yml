@@ -28,7 +28,7 @@ addons:
 before_install:
   - chmod a+x ./Scripts/*.sh
   # NUnit test
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 
 # Set up the dependencies of your build.
 install:
@@ -44,7 +44,8 @@ before_script:
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
-  - ls -l
+
+  - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp.dll
 
   # OpenCover -- Not tested
   #- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
@@ -58,11 +59,11 @@ script:
   - ls -l /Library
 
   # Test with NUnit 2
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
+  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
   # Test with NUnit 3
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
+  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
 # The deployment portion is used to deploy to specific,
