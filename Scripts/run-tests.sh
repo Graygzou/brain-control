@@ -13,7 +13,7 @@ echo "Running editor unit tests for $project"
 	-silent-crashes \
 	-projectPath $(pwd) \
 	-editorTestsResultFile $(pwd)/unit-test-results.xml \
-	-testFilter $(pwd)/Library/ScriptAssemblies/Assembly-CSharp.dll \
+	-testFilter $(pwd)/Assets/Library/ScriptAssemblies/Assembly-CSharp.dll \
 	-runEditorTests
 
 results=$?
@@ -29,15 +29,9 @@ else
   echo "All tests passed. Exited with $results"
 fi
 
-# Convert the file in the NUnit v2.0
-csc /target:exe /out:convert.exe /reference:./testrunner/NUnit.Runners.2.6.4/tools/pnunit.tests.dll ./Scripts/convert.cs
-mono convert.exe "unit-test-results.xml"
-
 # Test for codecov
 curl -s https://codecov.io/bash > codecov
 chmod +x codecov
-# NUnit v2.0
-./codecov -f $(pwd)/TestResultV2.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 # NUnit v3.0
 ./codecov -f $(pwd)/unit-test-results.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
 
