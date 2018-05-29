@@ -59,10 +59,10 @@ script:
   # --- DEBUG ---
   - ./Scripts/debug.sh
   # Test with NUnit 2
-  - mono ./packages/NUnit.ConsoleRunner.2.6.4/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
+  - mono ./packages/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # Test with NUnit 2
-  - mono ./packages/NUnit.ConsoleRunner.2.6.4/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
+  - mono ./packages/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Library/ScriptAssemblies/Assembly-CSharp.dll
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # ....New Test....
   # Should produce an XML file (results.xml)
