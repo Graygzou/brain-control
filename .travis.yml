@@ -44,7 +44,7 @@ before_script:
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
-  - ./Scripts/convert.sh
+  - ls -l
 
   # OpenCover -- Not tested
   #- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
@@ -55,6 +55,7 @@ script:
   # -----------------------
   - curl -s https://codecov.io/bash > codecov
   - chmod +x codecov
+  - ls -l
 
   # Test with NUnit 2
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Assets/Library/ScriptAssemblies/Assembly-CSharp.dll --result:nunit2
