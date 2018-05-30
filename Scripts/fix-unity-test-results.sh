@@ -18,3 +18,8 @@
 set -euo pipefail
 
 xml tr $(pwd)/Scripts/fix-unity-test-results.xslt $(pwd)/unit-test-results.xml > $(pwd)/nunit-test-results.xml
+
+echo "Unit test logs"
+echo ""
+cat $(pwd)/nunit-test-results.xml
+echo ""

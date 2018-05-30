@@ -76,9 +76,8 @@ script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
   # Try convert Unity xml response into NUnit xml.
-  - echo "Try converting...."
-  - ./Scripts/fix-unity-test-results.sh
-  - echo "Done"
+  #- ./Scripts/fix-unity-test-results.sh
+  #- echo "Done"
   # done
   - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
   # OpenCover -- Not tested
