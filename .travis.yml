@@ -51,7 +51,7 @@ before_script:
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
-  - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp.dll
+  - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
   # OpenCover -- Not tested
   #- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
   #- codecov -f "MyProject_coverage.xml

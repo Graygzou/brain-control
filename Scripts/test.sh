@@ -6,7 +6,7 @@ mkdir $coverage
 
 # Execute the command
 echo "Calculating coverage with OpenCover"
-/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
+mono ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
   -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
   -mergeoutput \
@@ -19,5 +19,5 @@ echo "Calculating coverage with OpenCover"
 
 if [ -n "$COVERALLS_REPO_TOKEN" ]
 then
-  coveralls/coveralls.net.0.7.0/tools/csmacnz.Coveralls.exe --opencover -i coverage/coverage.xml --useRelativePaths
+  mono ./coveralls/coveralls.net.0.7.0/tools/csmacnz.Coveralls.exe --opencover -i coverage/coverage.xml --useRelativePaths
 fi
