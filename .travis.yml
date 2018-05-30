@@ -10,7 +10,8 @@ solution: ./Brain-Control.sln
 branches:
   only:
     - master
-
+    
+sudo: false
 cache:
   apt: true
   directories:
@@ -48,7 +49,7 @@ before_install:
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls -Verbosity quiet
   - nuget install JetBrains.dotCover.CommandLineTools -Version 2018.1.1 -OutputDirectory packages -Verbosity quiet
   # Apt installs
-  - apt-get install xmlstarlet
+  - sudo apt-get install xmlstarlet
   # Make executable files
   - chmod a+x ./Scripts/*.sh
   - chmod a+x ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe
