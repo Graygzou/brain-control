@@ -39,4 +39,9 @@ fi
 
 
 echo "Calculating coverage with dotCover"
-$(pwd)/coverage/dotCover.2018.1.1/tools/dotCover.exe analyse TargetExecutable:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" TargetArguments:"$(pwd)/Assets/Editor" Output:report.xml
+$(pwd)/packages/JetBrains.dotCover.CommandLineTools.2018.1.1/tools/dotCover.exe analyse TargetExecutable:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" TargetArguments:"$(pwd)/Assets/Editor" Output:report.xml
+
+echo "dotCover report"
+echo ""
+cat ./report.xml
+echo ""
