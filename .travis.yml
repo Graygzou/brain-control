@@ -48,7 +48,7 @@ before_install:
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls -Verbosity quiet
   - nuget install JetBrains.dotCover.CommandLineTools -Version 2018.1.1 -OutputDirectory packages -Verbosity quiet
   # Apt installs
-  - brew update
+  - brew update > /dev/null
   - if [ $TRAVIS_OS_NAME = linux ]; then
       sudo apt-get update;
       sudo apt-get install xmlstarlet;
@@ -77,7 +77,7 @@ script:
   - ./Scripts/run-tests.sh
   # Try convert Unity xml response into NUnit xml.
   - echo "Try converting...."
-  - ./fix-unity-test-results.sh
+  - ./Scripts/fix-unity-test-results.sh
   - echo "Done"
   # done
   - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
