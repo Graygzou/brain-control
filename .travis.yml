@@ -30,12 +30,14 @@ addons:
 #   npm install
 #   bundle install
 before_install:
-  - chmod a+x ./Scripts/*.sh
   # NUnit test
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory packages
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory coverage
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls
+  # Make executable files
+  - chmod a+x ./Scripts/*.sh
+  - chmod a+x ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe
 
 # Set up the dependencies of your build.
 install:
@@ -70,7 +72,24 @@ script:
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # ....New Test....
   # Should produce an XML file (results.xml)
+  - echo "Calculating coverage with OpenCover"
+  - rm -rf ./coverage
+  - mkdir ./coverage
+  - mono ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
+    -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
+    -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
+    -mergeoutput \
+    -hideskipped:File \
+    -output:./coverage/coverage.xml \
+    -oldStyle \
+    -filer:"+[Brain-Control*]*" \
+    -searchdirs:"./" \
+    -register:user
+  # Again...
   - ./Scripts/test.sh
+  # ------------------------
+  # End
+  # ------------------------
   # Test with NUnit 3
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll --result:nunit2
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec

@@ -6,7 +6,7 @@ mkdir $coverage
 
 # Execute the command
 echo "Calculating coverage with OpenCover"
-mono ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
+/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
   -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
   -mergeoutput \
