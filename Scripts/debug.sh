@@ -1,5 +1,5 @@
 #!/bin/sh
 
 # 3
-cd coverage/
+cd packages/
 ls -l -R

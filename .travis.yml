@@ -33,9 +33,10 @@ before_install:
   # NUnit test
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory packages -Verbosity quiet
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner -Verbosity quiet
-  - nuget install OpenCover -Version 4.6.519 -OutputDirectory coverage -Verbosity quiet
+  - nuget install OpenCover -Version 4.6.519 -OutputDirectory packages -Verbosity quiet
   - nuget install ReportGenerator -Version 2.4.5.0 -OutputDirectory packages -Verbosity quiet
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls -Verbosity quiet
+  - nuget install JetBrains.dotCover.CommandLineTools -Version 2018.1.1 -OutputDirectory packages -Verbosity quiet
   # Make executable files
   - chmod a+x ./Scripts/*.sh
   - chmod a+x ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe

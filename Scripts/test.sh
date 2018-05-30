@@ -3,13 +3,13 @@
 coverage="./coverage"
 
 # Execute the command
+# OpenCover is meant to be executed on Windows... Fail.
 echo "Calculating coverage with OpenCover"
 mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
-  -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-  -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
+  -target:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" \
+  -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp.dll" \
   -output:$coverage/coverage.xml \
-  -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
-  -excludebyattribute:"System.CodeDom.Compiler.GeneratedCodeAttribute" \
+  -filter:"+[*]* -[Assembly-CSharp*]*" \
   -register:user
 echo "Done!"
 
@@ -20,11 +20,10 @@ echo ""
 
 echo "v2 !"
 mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
-  -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
+  -target:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" \
   -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
   -output:$coverage/coverage2.xml \
   -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
-  -excludebyattribute:"System.CodeDom.Compiler.GeneratedCodeAttribute" \
   -register:user
 echo "Done2!"
 
@@ -37,3 +36,7 @@ if [ -n "$COVERALLS_REPO_TOKEN" ]
 then
   mono ./coveralls/coveralls.net.0.7.0/tools/csmacnz.Coveralls.exe --opencover -i coverage/coverage.xml --useRelativePaths
 fi
+
+
+echo "Calculating coverage with dotCover"
+$(pwd)/coverage/dotCover.2018.1.1/tools/dotCover.exe analyse TargetExecutable:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" TargetArguments:"$(pwd)/Assets/Editor" Output:report.xml
