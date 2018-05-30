@@ -9,6 +9,7 @@ mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
   -output:$coverage/coverage.xml \
   -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
+  -excludebyattribute:"System.CodeDom.Compiler.GeneratedCodeAttribute" \
   -register:user
 echo "Done!"
 
@@ -23,6 +24,7 @@ mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
   -output:$coverage/coverage2.xml \
   -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
+  -excludebyattribute:"System.CodeDom.Compiler.GeneratedCodeAttribute" \
   -register:user
 echo "Done2!"
 
