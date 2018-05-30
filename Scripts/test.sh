@@ -1,8 +1,6 @@
 #!/bin/sh
 
 coverage="./coverage"
-rm -rf $coverage
-mkdir $coverage
 
 # Execute the command
 echo "Calculating coverage with OpenCover"

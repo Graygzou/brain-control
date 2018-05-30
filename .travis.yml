@@ -72,19 +72,17 @@ script:
   - ./codecov -f $(pwd)/TestResult.xml -t 3c5ce3f9-ddde-4db1-a62e-f0d35e9112ec
   # ....New Test....
   # Should produce an XML file (results.xml)
-  - echo "Calculating coverage with OpenCover"
-  - rm -rf ./coverage
-  - mkdir ./coverage
-  - mono ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
-    -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-    -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
-    -mergeoutput \
-    -hideskipped:File \
-    -output:./coverage/coverage.xml \
-    -oldStyle \
-    -filer:"+[Brain-Control*]*" \
-    -searchdirs:"./" \
-    -register:user
+  #- echo "Calculating coverage with OpenCover"
+  #- mono ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
+#    -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
+#    -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
+#    -mergeoutput \
+#    -hideskipped:File \
+#    -output:./coverage/coverage.xml \
+#    -oldStyle \
+#    -filer:"+[Brain-Control*]*" \
+#    -searchdirs:"./" \
+#    -register:user
   # Again...
   - ./Scripts/test.sh
   # ------------------------
