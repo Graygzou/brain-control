@@ -6,7 +6,7 @@ coverage="./coverage"
 # OpenCover is meant to be executed on Windows... Fail.
 echo "Calculating coverage with OpenCover"
 mono $(pwd)/packages/OpenCover.4.6.519/tools/OpenCover.Console.exe \
-  -target:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" \
+  -target:"$(pwd)/testrunner/NUnit.Console  Runner.3.8.0/tools/nunit3-console.exe" \
   -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp.dll" \
   -output:$coverage/coverage.xml \
   -filter:"+[*]* -[Assembly-CSharp*]*" \
@@ -39,7 +39,7 @@ fi
 
 
 echo "Calculating coverage with dotCover"
-mono $(pwd)/packages/JetBrains.dotCover.CommandLineTools.2018.1.1/tools/dotCover.exe analyse TargetExecutable:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" TargetArguments:"$(pwd)/Assets/Editor" Output:report.xml
+mono $(pwd)/packages/JetBrains.dotCover.CommandLineTools.2018.1.1/tools/dotCover.exe analyse TargetExecutable:"$(pwd)/testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe" TargetArguments:"$(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" Output:report.xml
 echo "Done!"
 
 echo "dotCover report"
