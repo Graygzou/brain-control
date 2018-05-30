@@ -34,6 +34,7 @@ before_install:
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory packages
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory coverage
+  - nuget install ReportGenerator -Version 2.4.5.0 -OutputDirectory packages 
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls
   # Make executable files
   - chmod a+x ./Scripts/*.sh
