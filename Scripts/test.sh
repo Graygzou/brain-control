@@ -6,13 +6,9 @@ coverage="./coverage"
 echo "Calculating coverage with OpenCover"
 mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-  -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
-  -mergeoutput \
-  -hideskipped:File \
+  -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
   -output:$coverage/coverage.xml \
-  -oldStyle \
-  -filter:"+[*]* -[NewEditMode*]*" \
-  -searchdirs:"./" \
+  -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
   -register:user
 echo "Done!"
 
@@ -24,13 +20,9 @@ echo ""
 echo "v2 !"
 mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-  -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
-  -mergeoutput \
-  -hideskipped:File \
+  -targetargs:"/nologo /noshadow $(pwd)/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" \
   -output:$coverage/coverage2.xml \
-  -oldStyle \
-  -filter:"+[*]* -[NewEditMode*]*" \
-  -searchdirs:"./" \
+  -filter:"+[*]* -[Assembly-CSharp-Editor*]*" \
   -register:user
 echo "Done2!"
 
