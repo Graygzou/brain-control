@@ -39,7 +39,7 @@ before_install:
   - nuget install JetBrains.dotCover.CommandLineTools -Version 2018.1.1 -OutputDirectory packages -Verbosity quiet
   # Make executable files
   - chmod a+x ./Scripts/*.sh
-  - chmod a+x ./coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe
+  - chmod a+x ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe
 
 # Set up the dependencies of your build.
 install:
