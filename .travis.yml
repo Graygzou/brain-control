@@ -40,6 +40,7 @@ before_install:
   # Make executable files
   - chmod a+x ./Scripts/*.sh
   - chmod a+x ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe
+  - chmod a+x ./packages/JetBrains.dotCover.CommandLineTools.2018.1.1/tools/dotCover.exe
 
 # Set up the dependencies of your build.
 install:
