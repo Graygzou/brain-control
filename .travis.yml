@@ -11,6 +11,12 @@ branches:
   only:
     - master
 
+cache:
+  apt: true
+  directories:
+    - ~/.m2/
+    - '$HOME/.sonar/cache'
+
 # Already by default.
 #mono:
 #  -latest
@@ -20,6 +26,10 @@ env:
   - COVERALLS_REPO_TOKEN=kDib1lLCmYcMNbecthFkRvRsnmm4Q6VhC
 
 addons:
+  apt:
+    packages:
+      - xsltproc
+      - xmlstarlet
   sonarcloud:
     organization: "graygzou-github"
     token:
@@ -30,13 +40,15 @@ addons:
 #   npm install
 #   bundle install
 before_install:
-  # NUnit test
+  # Nuget installs
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory packages -Verbosity quiet
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner -Verbosity quiet
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory packages -Verbosity quiet
   - nuget install ReportGenerator -Version 2.4.5.0 -OutputDirectory packages -Verbosity quiet
   - nuget install coveralls.net -Version 0.7.0 -OutputDirectory coveralls -Verbosity quiet
   - nuget install JetBrains.dotCover.CommandLineTools -Version 2018.1.1 -OutputDirectory packages -Verbosity quiet
+  # Apt installs
+  - apt-get install xmlstarlet
   # Make executable files
   - chmod a+x ./Scripts/*.sh
   - chmod a+x ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe
@@ -56,6 +68,11 @@ before_script:
 script:
   # Run customs tests.
   - ./Scripts/run-tests.sh
+  # Try convert Unity xml response into NUnit xml.
+  - echo "Try converting...."
+  - ./fix-unity-test-results.sh
+  - echo "Done"
+  # done
   - ./Scripts/nunit.sh ./Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
   # OpenCover -- Not tested
   #- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
@@ -84,10 +101,6 @@ script:
 
 # Build Matrix
 # Creating a build matrix is a way for us to test a wide variety of environments.
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
 
 # set notification options
 notifications:
