@@ -4,18 +4,6 @@ coverage="./coverage"
 
 # Execute the command
 echo "Calculating coverage with OpenCover"
-.$(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
-  -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
-  -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
-  -mergeoutput \
-  -hideskipped:File \
-  -output:$coverage/coverage.xml \
-  -oldStyle \
-  -filer:"+[Brain-Control*]*" \
-  -searchdirs:"./" \
-  -register:user
-
-echo "Test n°2"
 mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -target:"$(pwd)/packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" \
   -targetargs:"./Library/ScriptAssemblies/Assembly-CSharp-Editor-Editor.dll" \
@@ -23,7 +11,7 @@ mono $(pwd)/coverage/OpenCover.4.6.519/tools/OpenCover.Console.exe \
   -hideskipped:File \
   -output:$coverage/coverage.xml \
   -oldStyle \
-  -filer:"+[Brain-Control*]*" \
+  -filter:"+[Brain-Control*]* -[Brain-Control.*Tests*]*" \
   -searchdirs:"./" \
   -register:user
 
