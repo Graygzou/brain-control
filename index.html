@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Brain Control</title>
+  <link rel="icon" href="images/chat.ico" />
+
+  <link rel="stylesheet" type="text/css" href="css/fonts/zorque-font.css" defer>
+  <link rel="stylesheet" type="text/css" href="css/base_stylesheet.css" defer>
+  <link rel="stylesheet" type="text/css" href="css/project_stylesheet.css" defer>
+<style>
+.keys {
+	display: block;
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 1.3rem;
+	color: white;
+	text-align: center;
+	transition: all 300ms linear;
+	z-index: -1;
+}
+.keys > span {
+  z-index: 102;
+}
+form > div {
+    /*
+  transition: transform 400ms ease-out;*/
+  z-index: 1;
+  display: none;
+}
+label:before,
+label:after {
+	color: white;
+	display: block;
+	background: rgba(255,255,255,0.2);
+	position: absolute;
+	padding: 1rem;
+	font-size: 3rem;
+	height: 10rem;
+	vertical-align: middle;
+	line-height: 10rem;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
+}
+label:before {
+	content: "\276D";
+	right: 100%;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+label:after {
+	content: "\276C";
+	left: 100%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+input {
+  display: none;
+}
+form {
+  margin: 0 auto;
+  width: 100%;
+}
+input[type=radio]:checked + div {
+  display: block;
+    width: 100%;
+  /*transform: translate3d(-100%, 0, 0);*/
+}
+/*------------------*/
+/* Big Carousel section */
+/*------------------*/
+#carrousel-left-button img, #carrousel-right-button img {
+  margin: auto;
+}
+#carrousel-left-button:hover, #carrousel-right-button:hover {
+  background: #1e8696;
+}
+.left_chevron {
+	margin: 0 auto;
+	position: fixed;
+	display: block;
+	top: 0px;
+	left: 0px;
+	width: 15%;
+	text-align: center;
+	line-height: 100vh;
+}
+.left_chevron_legend {
+	font-size: 130%;
+	position: fixed;
+	left: 2%;
+	top: 52%;
+	width: 10%;
+	text-align: center;
+	word-wrap: break-word;
+	line-height: normal;
+	font-family: 'customfont';
+}
+.right_chevron {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 15%;
+	text-align: center;
+	line-height: 100vh;
+}
+.right_chevron_legend {
+	margin: 0 auto;
+	font-size: 130%;
+	position: fixed;
+	right: 2%;
+	top: 52%;
+	width: 10%;
+	text-align: center;
+	word-wrap: break-word;
+	line-height: normal;
+	font-family: 'customfont';
+}
+.left_chevron:hover {
+	background: linear-gradient(to right, gray , white);
+	opacity: 0.40;
+}
+.right_chevron:hover  {
+	background: linear-gradient(to left, gray , white);
+	opacity: 0.40;
+}
+</style>
+</head>
+<nav class="menu-navbar" id="myNavbar">
+  <a class="menu-item" href="#overview_section">Overview</a>
+  <a class="menu-item" href="#gameplay_section">Gameplay Video</a>
+  <a class="menu-item" href="#detailed_section">Detailed Info</a>
+  <a href="javascript:void(0);" class="icon" onclick="functionMenus()"><span class="fa fa-bars fa-2x" aria-hidden="true"></span></a>
+  <nav class="nav-icon">
+    <a href="https://github.com/Graygzou/Brain-Control"><i class="fab fa-github fa-2x"></i></a>
+  </nav>
+</nav>
+<div id="myDropdown" class="dropdown-content">
+    <a class="menu-item" href="#overview_section">Overview</a>
+    <a class="menu-item" href="#gameplay_section">Gameplay Video</a>
+    <a class="menu-item" href="#detailed_section">Detailed Info</a>
+</div>
+<header>
+</header>
+<body>
+    <article id="main_page">
+	  <div id="picture_section"><img src="images/Brain/brainControlCrop.png"></div>
+	  <h1 class="project_title" style="font-family: 'braincontrolfont'; font-size: 5.0em;">Brain Control</h1>
+	  <hr>
+
+	  <section id="overview_section">
+	    <h1 class="section_title" style="font-size: 270%;"> <span class="fa fa-search" aria-hidden="true"></span> Overview</h1>
+	    <aside class="overview_table">
+		    <div><span class="table_title">Platform:</span>	<br>Windows PC</div>
+		    <div><span class="table_title">Engine:</span>	<br> Unity</div>
+		    <div><span class="table_title">Tools Used:</span>	<br> Unity, Asset Store</div>
+		    <div><span class="table_title">Duration:</span>	<br> 48 hours </div>
+		    <div><span class="table_title">Team Size:</span>	<br> 7	</div>
+		    <div><span class="table_title">Main Role:</span>	<br> IA Programmer <br> Game Programmer <br>
+	    </aside>
+	    <article class="description_side">
+		<p>
+		Brain Control is a top down 2D game, similar to a Quake-style deathmatch. This application has been completed for a GameJam called the WonderJAM organised by the Université du Québec &#224 Chicoutimi (UQAC). The official website of this event is the following : <a href="http://jam.aemi.ca/">WonderJAM Winter 2018</a>.
+		</p>
+		<p>
+		You play as survivors from a deadly virus which turn humans into zombies. Your objectif is to be the last survival alive to be able to build an army of zombies. Players can't attack each other direclty and have to use zombies to do so. Each time a zombie is killes by one player, it resurrect, thanks to the bullets they used. Once resurrected, he attacks the other player. Moreover, each players is losing life over time and can only gain back some by killing standard zombies.
+		</p>
+		<h2 class="table_title">Constraints</h2>
+		<ul>
+			<li>Theme : Order and Disorder.</li>
+			<li>Imposed words : Arcade, Survival, Multiplayers.</li>
+		</ul>
+		<span class="table_title">Gamejolt Link</span>: <a href="https://gamejolt.com/games/BrainControl/323988">Brain Control Link</a>. <br>
+		<span class="table_title">Github Link</span>: <a href="https://github.com/Graygzou/Brain-Control">Brain Control Project</a>.
+	    </article>
+
+	  </section>
+
+	  <hr>
+	  
+	  <!--
+	  <section id="gameplay_section">
+	    <h1 class="section_title" style="font-size: 270%;"> <span class="fa fa-gamepad" aria-hidden="true"></span> Gameplay video</h1>
+		<iframe width="450" height="375" src="https://www.youtube.com/embed/">
+		</iframe>
+	  </section>-->
+
+	  <section id="gameplay_section">
+	    <h1 class="section_title" style="font-size: 270%;"> <span class="fa fa-gamepad" aria-hidden="true"></span>Screenshots</h1>
+	    <div id="carousel">
+	      <div class="selected">
+		<img src="images/Brain/brainControl.png"> 
+	      </div>
+
+	      <div class="buttons">
+	      <span id="prev">
+		<i class="far fa-caret-square-right fa-3x" data-fa-transform="flip-v flip-h"></i>
+	      </span>
+	      <span id="next">
+		<i class="far fa-caret-square-right fa-3x"></i>
+	      </span>
+	    </div>
+	  </section>
+	  <hr>
+
+	  <section id="detailed_section">
+	    <h1 class="section_title" style="font-size: 270%;"> <span class="fa fa-info-circle" aria-hidden="true"></span> Detailed Info</h1>
+	    <!--<p></p>
+	    <h3>Theme integration</h3>-->
+
+	    <h3>IA</h3>
+	    <h4>Pathfinding</h4>
+	    <p> During this gamejam, i wanted to make a pathfinder to avoid collisions easily bewteen zombies and walls. I start developping an A* algorithm based on an existing one but adapted to our needs. Unfortunalty, I did not realize at that point that this kind of algorithm will not be efficient in our case because players are moving entities. Even if I did received course on that topic, I did not though about it until I test it with several zombies. I finally dropped this idea to develop and alternative to make zombies avoid obstacles. 
+
+	    <h4>Force based movement</h4>
+	    <p>To overcome the previous issue, I developped a basic movement was a classic Seek to the player without wall-avoidance. this allowed my team to make tests and move forward. After that, I made a wall-avoidance to make zombies behavior more realistic by avoiding obstacles. 
+
+	    </p>
+	  </section>
+    </article>
+</body>
+<footer>
+  <i class="far fa-copyright"></i> Gregoire Boiron. All rights reserved.
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+<script src="js/custom.js" defer></script>
