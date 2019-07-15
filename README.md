@@ -1,4 +1,4 @@
-# Brain-Control 
+# Brain-Control [![Website](https://img.shields.io/website/https/graygzou.github.io/Brain-Control.svg)](https://graygzou.github.io/Brain-Control/)  
 [![Build Status](https://travis-ci.com/Graygzou/Brain-Control.svg?branch=master)](https://travis-ci.com/Graygzou/Brain-Control)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=graygzou%3Abrain-control&metric=alert_status)](https://sonarcloud.io/dashboard?id=graygzou%3Abrain-control)
 
